@@ -1,0 +1,245 @@
+@use "./mixins/mixins" as m;
+
+.book {
+  margin-top: clamp(1.875rem, -0.9107rem + 13.9286vw, 11.625rem);
+  &__container {
+    max-width: 1134px;
+    padding: 0 10px;
+    display: flex;
+    column-gap: 118px;
+    flex-wrap: wrap;
+
+    @include m.media-max(1020px) {
+      row-gap: 65px;
+      justify-content: center;
+    }
+  }
+
+  &__left {
+    max-width: 511px;
+    span {
+      font-weight: 600;
+      font-size: 18px;
+      color: #5e6282;
+    }
+  }
+
+  &__title {
+    font-family: "Volkhov", serif;
+    font-weight: 700;
+    font-size: clamp(1.5625rem, 1.1161rem + 2.2321vw, 3.125rem);
+    color: #14183e;
+    text-transform: capitalize;
+    margin-top: 15px;
+    margin-bottom: 31px;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 21px;
+    @include m.media-max(565px) {
+      flex-direction: column;
+    }
+
+    &:nth-child(1) {
+      .item__left {
+        background-color: #f0bb1f;
+      }
+    }
+    &:nth-child(2) {
+      .item__left {
+        background-color: #f15a2b;
+      }
+    }
+    &:nth-child(3) {
+      .item__left {
+        background-color: #006380;
+      }
+    }
+  }
+
+  &__right {
+    position: relative;
+    user-select: none;
+  }
+
+  &__block {
+    min-width: 370px;
+    padding: 20px 25px 31px;
+    border-radius: 26px;
+    box-shadow: 0 10px 80px rgba($color: #000000, $alpha: 0.2);
+    color: #84829a;
+
+    @include m.media-max(565px) {
+      min-width: 0;
+      width: 280px;
+    }
+  }
+}
+
+.item {
+  &__left {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 48px;
+    border-radius: 13px;
+    @include m.media-max(565px) {
+      width: 48px;
+      align-self: self-start;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__img {
+  }
+
+  &__right {
+  }
+
+  &__title {
+    font-weight: 700;
+    color: #5e6282;
+    margin-bottom: 4px;
+  }
+
+  &__text {
+    font-weight: 400;
+    color: #5e6282;
+  }
+}
+
+.block {
+  &__img {
+    border-radius: 24px;
+    max-height: 161px;
+  }
+
+  &__title {
+    margin-top: 26px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #080809;
+  }
+
+  &__subtitle {
+    margin-top: 13px;
+    font-weight: 500;
+  }
+
+  &__links {
+    margin-top: 21px;
+    display: flex;
+    column-gap: 18px;
+  }
+
+  &__link {
+    flex-shrink: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 29px;
+  }
+
+  &__info {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 15px;
+  }
+
+  &__people {
+    font-weight: 500;
+  }
+
+  &__like {
+  }
+
+  &__details {
+    display: inline-flex;
+    flex-direction: column;
+    flex-grow: 1;
+    &:first-child {
+      font-size: 14px;
+      font-weight: 500;
+      color: #84829a;
+    }
+  }
+
+  &__city {
+    margin-top: 6px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #080809;
+  }
+
+  &__small-footer {
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #080809;
+  }
+
+  &__percent {
+    color: #8a79df;
+  }
+
+  &__range {
+    margin-top: 9px;
+    height: 5px;
+    background-color: #f5f5f5;
+    border-radius: 30px;
+  }
+
+  &__range-completed {
+    width: 45%;
+    height: 5px;
+    border-radius: 30px;
+    background-color: #8a79df;
+  }
+}
+
+.block-small {
+  position: absolute;
+  right: -28%;
+  bottom: 25%;
+  min-width: 263px;
+  padding: 16px 25px 22px 20px;
+  display: flex;
+  column-gap: 12px;
+  border-radius: 18px;
+  background-color: #fff;
+  box-shadow: 0 16px 25px rgba($color: #000000, $alpha: 0.1);
+  @include m.media-max(565px) {
+    min-width: 180px;
+    flex-direction: column;
+    img {
+      width: 50px;
+    }
+  }
+  @include m.media-max(1019px) {
+    bottom: 15%;
+    right: -19%;
+  }
+  img {
+    border-radius: 50%;
+    height: 50px;
+  }
+}

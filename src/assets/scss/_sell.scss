@@ -1,0 +1,84 @@
+.sell {
+  margin-top: 123px;
+  &__container {
+    max-width: 1122px;
+    padding: 0 10px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 291px;
+      right: 21px;
+      width: 96px;
+      height: 252px;
+      background: url("../img/decore.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: -1;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+    span {
+      font-size: 18px;
+      font-weight: 600;
+      color: #5e6282;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__title {
+    font-family: "Volkhov", serif;
+    font-size: clamp(1.5625rem, 1.1161rem + 2.2321vw, 3.125rem);
+    font-weight: 700;
+    color: #14183e;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  &__item {
+    max-width: 314px;
+    flex-shrink: 0;
+  }
+
+  &__img {
+    max-height: 327px;
+    object-fit: cover;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+  }
+
+  &__item-bottom {
+    margin: -3px;
+    padding: 27px 25px 42px 20px;
+    color: #5e6282;
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 19px;
+  }
+  &__trip {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 14px;
+    span {
+      font-weight: 500;
+    }
+  }
+}

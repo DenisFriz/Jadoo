@@ -1,0 +1,29 @@
+@use "./mixins/mixins" as m;
+
+.company {
+  margin-top: clamp(1.25rem, 0.3rem + 4.75vw, 6rem);
+
+  &__container {
+    max-width: 1093px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex-grow: 1;
+    user-select: none;
+    display: inline-flex;
+    justify-content: center;
+    img {
+      transition: 0.3s ease-in;
+      filter: grayscale(1);
+    }
+    &:hover {
+      img {
+        filter: grayscale(0);
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+@use "./mixins/mixins" as m;
+
+.offer {
+  margin-top: clamp(1.5625rem, -1.8125rem + 16.875vw, 13.375rem);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 153px;
+    height: 166px;
+    z-index: -1;
+    background: url("../img/Offer-decore.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__container {
+    max-width: 1248px;
+    padding: 0 10px;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 66px;
+    span {
+      font-size: clamp(0.875rem, 0.8036rem + 0.3571vw, 1.125rem);
+      font-weight: 600;
+      color: #5e6282;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__title {
+    font-family: "Volkhov", serif;
+    font-size: clamp(1.5625rem, 1.1161rem + 2.2321vw, 3.125rem);
+    font-weight: 700;
+    color: #14183e;
+    margin-bottom: 10px;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+
+  &__card {
+    &:nth-child(1) {
+      .card__img {
+        width: 66px;
+        height: 70px;
+        margin-bottom: 37px;
+      }
+    }
+    &:nth-child(2) {
+      .card__img {
+        object-fit: none;
+        width: 137px;
+        height: 95px;
+        margin-bottom: 5px;
+      }
+    }
+    &:nth-child(3) {
+      .card__img {
+        width: 40px;
+        height: 69px;
+        margin-bottom: 5px;
+      }
+    }
+    &:nth-child(4) {
+      .card__img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+.card {
+  max-width: 190px;
+  text-align: center;
+  &__img {
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
+  &--big {
+    max-width: 267px;
+    padding: 0 50px 45px 50px;
+    border-radius: 36px;
+    box-shadow: 0 38.52px 25.5px rgba($color: #000000, $alpha: 0.1);
+
+    @include m.media-max(886px) {
+      box-shadow: 0 16px 25.5px rgba($color: #000000, $alpha: 0.1);
+    }
+  }
+
+  &__title {
+    font-family: "Open Sans", sans-serif;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e1d4c;
+    margin-bottom: 15px;
+    white-space: nowrap;
+  }
+
+  &__text {
+    font-weight: 500;
+    color: #5e6282;
+  }
+}

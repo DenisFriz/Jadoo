@@ -1,0 +1,43 @@
+@use "./header";
+@use "./travel";
+@use "./offer";
+@use "./sell";
+@use "./book";
+@use "./people";
+@use "./company";
+@use "./subscribe";
+@use "./footer";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Volkhov:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  border-style: none;
+  cursor: pointer;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+main {
+  margin-top: clamp(1.875rem, 0.5357rem + 6.6964vw, 6.5625rem);
+  overflow: hidden;
+}

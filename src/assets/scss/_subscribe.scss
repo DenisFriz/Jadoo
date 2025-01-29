@@ -1,0 +1,140 @@
+@use "./mixins/mixins" as m;
+
+.subscribe {
+  position: relative;
+  margin-top: clamp(1.25rem, -0.05rem + 6.5vw, 7.75rem);
+  padding: 79px 0;
+
+  &__container {
+    max-width: 1376px;
+    padding: 0 10px;
+  }
+
+  &__title {
+    max-width: 859px;
+    margin: 0 auto 74px;
+    text-align: center;
+    font-size: clamp(1.125rem, 0.8571rem + 1.3393vw, 2.0625rem);
+    font-weight: 600;
+    color: #5e6282;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    column-gap: 24px;
+    @include m.media-max(750px) {
+      flex-direction: column;
+      align-items: center;
+      column-gap: none;
+      row-gap: 20px;
+    }
+    input {
+      position: relative;
+      border-style: none;
+      border-radius: 6px;
+      min-width: 421px;
+      padding: 25px 12px 25px 66px;
+      font-size: 14px;
+      font-weight: 400;
+      color: #39425d;
+      background-color: #fff;
+
+      @include m.media-max(440px) {
+        min-width: 100%;
+      }
+
+      &:focus {
+        outline: none;
+        border: 1px solid rgba(255, 148, 109, 100%);
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 31px;
+        width: 21px;
+        height: 18px;
+        background: url("../img/mail.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      &:invalid:not(:placeholder-shown) {
+        border-color: red;
+      }
+
+      &:invalid + button[type="submit"] {
+        opacity: 0.6;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__btn {
+    font-family: "Open Sans", sans-serif;
+    padding: 22px 50px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 10px;
+    max-width: 180px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 148, 109, 100%),
+      rgba(255, 125, 104, 100%)
+    );
+  }
+}
+
+.subscribe__telegram {
+  position: absolute;
+  top: -20px;
+  right: 232px;
+  z-index: 1;
+  @include m.media-max(1100px) {
+    width: 50px;
+    right: 150px;
+  }
+  @include m.media-max(768px) {
+    width: 32px;
+    top: 30px;
+    right: 60px;
+  }
+}
+
+.subscribe__decore-1 {
+  position: absolute;
+  top: 0;
+  right: 252px;
+  @include m.media-max(1070px) {
+    width: 200px;
+  }
+  @include m.media-max(960px) {
+    right: 80px;
+  }
+  @include m.media-max(600px) {
+    right: 0;
+  }
+}
+
+.subscribe__decore-2 {
+  position: absolute;
+  top: 123px;
+  left: 272px;
+  z-index: -1;
+  @include m.media-max(1610px) {
+    width: 300px;
+    left: 20px;
+  }
+  @include m.media-max(820px) {
+    width: 240px;
+  }
+  @include m.media-max(670px) {
+    top: 170px;
+    left: 0;
+  }
+  @include m.media-max(490px) {
+    left: -18%;
+  }
+}

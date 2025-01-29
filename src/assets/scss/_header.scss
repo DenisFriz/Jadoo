@@ -1,0 +1,202 @@
+@use "./mixins/mixins" as m;
+
+.header {
+  position: fixed;
+  top: 47px;
+  left: 0;
+  right: 0;
+  font-size: 17px;
+  font-weight: 500;
+  z-index: 5;
+  transition: 0.4s ease-in;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    padding: 0 20px;
+
+    @include m.media-max(500px) {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 20px;
+    }
+  }
+
+  &__logo {
+    object-fit: contain;
+    display: flex;
+    user-select: none;
+  }
+
+  &__right {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__nav {
+    position: relative;
+    margin-right: clamp(1.25rem, 0.1071rem + 5.7143vw, 5.25rem);
+  }
+
+  &__select-lang {
+    border: none;
+    cursor: pointer;
+    color: #212832;
+  }
+
+  &__list {
+    list-style: none;
+    display: inline-flex;
+    column-gap: 55px;
+
+    @include m.media-max(1010px) {
+      column-gap: 40px;
+    }
+
+    @include m.media-max(928px) {
+      display: none;
+    }
+
+    &--active {
+      @include m.media-max(928px) {
+        position: absolute;
+        top: 40px;
+        right: 100%;
+        display: inline-flex;
+        flex-direction: column;
+        text-align: center;
+        row-gap: 8px;
+        background-color: #fff;
+        padding: 16px 8px;
+        border-radius: 6px;
+        box-shadow: 2px 4px 12px 0px rgb(0, 0, 0);
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: rgba(241, 165, 1, 0.5);
+      transition: width 0.3s ease-in;
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #212832;
+  }
+
+  &__buttons {
+    display: flex;
+    margin-right: 42px;
+
+    @include m.media-max(1220px) {
+      margin-right: 20px;
+    }
+  }
+
+  &__login-btn {
+    color: #212832;
+    background-color: transparent;
+    margin-right: clamp(0.625rem, -0.1071rem + 3.6607vw, 3.1875rem);
+    font-weight: 500;
+
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: rgba(241, 165, 1, 0.5);
+      transition: width 0.3s ease-in;
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+  &__signup-btn {
+    white-space: nowrap;
+    color: #212832;
+    padding: 10px clamp(0.75rem, 0.625rem + 0.625vw, 1.1875rem);
+    border: 1px solid currentColor;
+    border-radius: 5px;
+    background-color: transparent;
+    font-weight: 500;
+    transition: background-color 0.4s ease;
+
+    &:hover,
+    &:active {
+      background-color: rgb(241, 165, 1);
+    }
+  }
+}
+
+.burger__menu {
+  display: none;
+  @include m.media-max(928px) {
+    display: flex;
+  }
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  row-gap: 8px;
+  span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #212832;
+  }
+}
+
+.burger__close {
+  position: relative;
+}
+
+.burger__close span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 30px;
+  height: 2px;
+}
+
+.burger__close span:nth-child(3) {
+  display: none;
+}
+
+.burger__close span:nth-child(1) {
+  transform: rotate(-45deg);
+}
+
+.burger__close span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.header--active {
+  top: 0;
+  background-color: #fff;
+  padding: 20px;
+}

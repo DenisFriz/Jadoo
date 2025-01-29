@@ -1,0 +1,194 @@
+@use "./mixins/_mixins.scss" as m;
+
+.travel {
+  padding-top: 112px;
+  @include m.media-max(455px) {
+    margin-top: 165px;
+  }
+  &__container {
+    position: relative;
+    display: flex;
+    max-width: 1220px;
+    padding: 0 10px 117px;
+  }
+
+  &__left {
+    position: relative;
+    z-index: 4;
+    max-width: 630px;
+  }
+
+  &__above-title {
+    font-weight: 700;
+    font-size: clamp(0.875rem, 0.7679rem + 0.5357vw, 1.25rem);
+    color: #df6951;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-family: "Volkhov", serif;
+    font-weight: 700;
+    font-size: clamp(2.1875rem, 1.3125rem + 4.375vw, 5.25rem);
+    color: #181e4b;
+    margin-top: 0;
+    margin-bottom: 30px;
+    position: relative;
+    &::before {
+      position: absolute;
+      top: 73px;
+      left: 272px;
+      width: 100%;
+      max-width: 385px;
+      height: 12px;
+      background: url("../img/Travel_decore.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: -1;
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    color: #5e6282;
+    margin-bottom: 34px;
+  }
+
+  &__buttons {
+    display: flex;
+    column-gap: clamp(1.25rem, 0.8214rem + 2.1429vw, 2.75rem);
+  }
+
+  &__btn-find {
+    border-radius: 10px;
+    padding: clamp(0.4375rem, 0.2054rem + 1.1607vw, 1.25rem)
+      clamp(0.5rem, 0.1964rem + 1.5179vw, 1.5625rem);
+    font-weight: 500;
+    font-size: 18px;
+    background-color: #f1a501;
+    transition: box-shadow 0.3s ease-in;
+    box-shadow: 0 20px 35px rgba($color: #f1a501, $alpha: 0.15);
+    color: #fff;
+
+    &:hover {
+      box-shadow: 4px 4px 11px 5px rgba($color: #f1a501, $alpha: 0.65);
+    }
+  }
+
+  &__play-demo {
+    display: inline-flex;
+    align-items: center;
+    span {
+      color: #686d77;
+      font-size: 17px;
+      font-weight: 500;
+    }
+  }
+
+  &__circle {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: #df6951;
+    margin-right: 21px;
+    box-shadow: 0 15px 30px rgba($color: #df6951, $alpha: 0.3);
+
+    @include m.media-max(700px) {
+      width: 35px;
+      height: 35px;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 57%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 8px 0 8px 10px;
+        border-color: transparent transparent transparent #fff;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 57%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 8px 0 8px 10px;
+      border-color: transparent transparent transparent #fff;
+    }
+  }
+
+  &__right {
+  }
+}
+
+// Images
+.traveller {
+  position: absolute;
+  top: -17%;
+  right: 1%;
+  z-index: 2;
+  @include m.media-max(1131px) {
+    top: 5%;
+    right: 0;
+    height: 450px;
+  }
+  @include m.media-max(867px) {
+    display: none;
+  }
+}
+
+.plane_1,
+.plane_2 {
+  position: absolute;
+}
+
+.plane_1 {
+  top: -9.67%;
+  right: 39.2%;
+  @include m.media-max(867px) {
+    top: 13.33%;
+    right: 12.2%;
+  }
+}
+
+.plane_2 {
+  top: 0%;
+  right: 0%;
+  z-index: 1;
+  @include m.media-max(1131px) {
+    top: 0%;
+    right: 0%;
+  }
+  @include m.media-max(867px) {
+    display: none;
+  }
+}
+
+.decore_bg {
+  position: absolute;
+  top: -57%;
+  right: -13%;
+  z-index: -1;
+  transform: rotate(358deg);
+  @include m.media-max(1131px) {
+    top: -51%;
+    right: 5%;
+    height: 550px;
+    transform: rotate(4deg);
+  }
+  @include m.media-max(867px) {
+    top: -50%;
+    right: 2%;
+    height: 450px;
+  }
+  @include m.media-max(455px) {
+    top: -83%;
+  }
+}
